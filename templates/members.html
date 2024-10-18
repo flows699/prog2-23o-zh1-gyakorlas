@@ -12,5 +12,8 @@
   <input type="text" name="name" placeholder="Name" />
   <input type="text" name="neptun" placeholder="Neptun" />
   <button>Add</button>
+  {% if error %}
+  <p style="color: red;">{{ error }}</p>
+  {% endif %}
 </form>
 {% endblock %}

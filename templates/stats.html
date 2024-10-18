@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h3>Number of times each book has been checked out</h3>
-<!-- TODO diagram -->
+<img src="{{ url_for('static', filename='images/book_checkout_stats.png') }}" alt="Book Checkout Stats">
 <h3>Number of books checked out by each member</h3>
-<!-- TODO diagram -->
+<img src="{{ url_for('static', filename='images/member_checkout_stats.png') }}" alt="Member Checkout Stats">
 {% endblock %}
