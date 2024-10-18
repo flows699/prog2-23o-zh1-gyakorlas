@@ -48,7 +48,6 @@ def show_members():
 
 @app.route("/books", methods=["GET", "POST"])
 def get_books():
-    print(request.method)
     if request.method == "GET":
         db = get_db()
         books = db.execute("SELECT * FROM book").fetchall()
@@ -106,10 +105,6 @@ def return_book():
     db.execute(
         "UPDATE book SET rented = False, rented_by = NULL WHERE id = ?",
         (bookid,),
-    )
-
-    db.execute(
-        "UPDATE user SET rentedbooks = rentedbooks - 1 WHERE neptun = ?", (neptun,)
     )
 
     db.commit()
